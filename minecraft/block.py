@@ -17,6 +17,7 @@ class Block:
         """Allows a Block to be sent whenever id [and data] is needed"""
         return iter((self.id, self.data))
 
+
 AIR                 = Block(0)
 STONE               = Block(1)
 GRASS               = Block(2)

@@ -1,7 +1,7 @@
 import socket
 import select
 import sys
-from util import flatten_parameters
+from minecraft.util import flatten_parameters
 
 """ @author: Aron Nieminen, Mojang AB"""
 

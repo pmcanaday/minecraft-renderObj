@@ -1,6 +1,6 @@
-from connection import Connection
-from vec3 import Vec3
-from event import BlockEvent
+from minecraft.connection import Connection
+from minecraft.vec3 import Vec3
+from minecraft.event import BlockEvent
 
 """ Minecraft PI low level api v0.1_0
 

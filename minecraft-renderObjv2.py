@@ -4,6 +4,7 @@
 
 # import the minecraft.py module from the minecraft directory
 import minecraft.minecraft as minecraft
+import minecraft.vec3
 # import minecraft block module
 import minecraft.block as block
 # import time, so delays can be used
@@ -388,9 +389,9 @@ if __name__ == "__main__":
 
     # Raspbery Pi
     COORDSSCALE = 1350
-    STARTCOORD = minecraft.Vec3(-50, 0, 0)
-    CLEARAREA1 = minecraft.Vec3(-100, 0, -100)
-    CLEARAREA2 = minecraft.Vec3(100, 20, 10)
+    STARTCOORD = minecraft.vec3.Vec3(-50, 0, 0)
+    CLEARAREA1 = minecraft.vec3.Vec3(-100, 0, -100)
+    CLEARAREA2 = minecraft.vec3.Vec3(100, 20, 10)
     DEFAULTBLOCK = [block.DIRT, None]
     MATERIALS = {"Default_Material": [block.WOOL.id, 0],
                  "Material1": [block.WOOL.id, 5],
@@ -434,12 +435,12 @@ if __name__ == "__main__":
             # strip co-ords from vertex line
             vertexX, vertexY, vertexZ = getVertexXYZ(vertices[vertex[0]], COORDSSCALE, STARTCOORD, SWAPYZ)
 
-            faceVertices.append(minecraft.Vec3(vertexX, vertexY, vertexZ))
+            faceVertices.append(minecraft.vec3.Vec3(vertexX, vertexY, vertexZ))
 
         # draw the face
         mcDrawing.drawFace(faceVertices, materials[faceCount][0], materials[faceCount][1])
         faceCount = faceCount + 1
-
     mc.postToChat("Model complete, www.stuffaboutcode.com")
 
+    print('facecount: ', faceCount)
     print(datetime.datetime.now())
