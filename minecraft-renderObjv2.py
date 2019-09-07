@@ -103,7 +103,7 @@ class MinecraftDrawing:
 
         # if the 2 points are the same, return single vertice
         if (x1 == x2 and y1 == y2 and z1 == z2):
-            vertices.append(minecraft.Vec3(x1, y1, z1))
+            vertices.append(minecraft.vec3.Vec3(x1, y1, z1))
 
         # else get all points in edge
         else:
@@ -130,7 +130,7 @@ class MinecraftDrawing:
                 zd = az - (ax >> 1)
                 loop = True
                 while (loop):
-                    vertices.append(minecraft.Vec3(x, y, z))
+                    vertices.append(minecraft.vec3.Vec3(x, y, z))
                     if (x == x2):
                         loop = False
                     if (yd >= 0):
@@ -148,7 +148,7 @@ class MinecraftDrawing:
                 zd = az - (ay >> 1)
                 loop = True
                 while (loop):
-                    vertices.append(minecraft.Vec3(x, y, z))
+                    vertices.append(minecraft.vec3.Vec3(x, y, z))
                     if (y == y2):
                         loop = False
                     if (xd >= 0):
@@ -166,7 +166,7 @@ class MinecraftDrawing:
                 yd = ay - (az >> 1)
                 loop = True
                 while (loop):
-                    vertices.append(minecraft.Vec3(x, y, z))
+                    vertices.append(minecraft.vec3.Vec3(x, y, z))
                     if (z == z2):
                         loop = False
                     if (xd >= 0):
@@ -251,8 +251,8 @@ if __name__ == "__main__":
 
     # Connect to minecraft by creating the minecraft object
     # - minecraft needs to be running and in a game
-    mc = minecraft.Minecraft.create()
-
+    # mc = minecraft.Minecraft.create()
+    mc = minecraft.minecraft.Minecraft.create()
     # Create minecraft drawing class
     mcDrawing = MinecraftDrawing(mc)
 
@@ -389,7 +389,7 @@ if __name__ == "__main__":
 
     # Raspbery Pi
     COORDSSCALE = 1350
-    STARTCOORD = minecraft.vec3.Vec3(-50, 0, 0)
+    STARTCOORD = minecraft.vec3.Vec3(-3, 85, -19)
     CLEARAREA1 = minecraft.vec3.Vec3(-100, 0, -100)
     CLEARAREA2 = minecraft.vec3.Vec3(100, 20, 10)
     DEFAULTBLOCK = [block.DIRT, None]
